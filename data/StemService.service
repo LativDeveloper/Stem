@@ -1,0 +1,12 @@
+[Unit]
+Description = Stem is Carter's child
+After network.target = StemService.service
+
+[Service]
+Type = forking
+ExecStart = /usr/local/bin/StemService.sh start
+ExecStop = /usr/local/bin/StemService.sh stop
+ExecReload = /usr/local/bin/StemService.sh restart
+
+[Install]
+WantedBy=multi-user.target
